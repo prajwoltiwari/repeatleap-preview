@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RepeatLeap · Klaviyo email and SMS for Shopify brands</title>
+<meta name="description" content="RepeatLeap builds Klaviyo flows and campaigns for Shopify brands and turns first-time buyers into repeat customers. Book a free 30-minute retention audit.">
+<link rel="canonical" href="https://repeatleap.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RepeatLeap">
+<meta property="og:title" content="RepeatLeap · Klaviyo email and SMS for Shopify brands">
+<meta property="og:description" content="RepeatLeap builds Klaviyo flows and campaigns for Shopify brands and turns first-time buyers into repeat customers. Book a free 30-minute retention audit.">
+<meta property="og:url" content="https://repeatleap.com/">
+<meta property="og:image" content="https://repeatleap.com/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://repeatleap.com/og.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Homemade+Apple&display=swap">
+<style>
+html,body{margin:0}
+
+/* Layout: white paper, black ink, one red pen. Real client emails and real Klaviyo dashboards carry the page; type stays quiet around them. Single light theme by choice. */
+:root{
+  --paper:#FFFFFF; --band:#F4F4F1; --ink:#141414; --muted:#62625E; --line:#E3E3DE; --pen:#E0301E; --good:#1E7A46; --onink:#F5F5F2;
+  --sans:"Schibsted Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --sign:"Homemade Apple","Brush Script MT",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+a{color:inherit}
+p{margin:0}
+img{display:block;max-width:100%}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.6vw,3.8rem)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.kicker{font-size:.9rem;font-weight:600;color:var(--pen);display:block}
+.lede{font-size:1.2rem;color:var(--muted);max-width:52ch}
+:focus-visible{outline:3px solid var(--pen);outline-offset:3px}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:1.05rem;padding:18px 26px;border:0;cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:var(--pen)}
+.link{font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+.link:hover{color:var(--pen)}
+section{padding-block:clamp(80px,10vw,128px)}
+.sec-head{display:grid;gap:18px;margin-bottom:56px;max-width:780px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:850;font-size:1.3rem;letter-spacing:-.04em}
+.logo svg{width:30px;height:24px}
+.nav-links{display:flex;gap:30px;font-size:.98rem}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--pen)}
+.nav .btn{padding:12px 18px;font-size:.95rem}
+@media (max-width:860px){.nav-links{display:none}}
+
+/* hero */
+.hero{padding-block:56px 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.9rem,6vw,5.4rem);font-weight:850;letter-spacing:-.045em}
+.hero h1 em{font-style:normal;color:var(--pen)}
+.hero-sub{font-size:1.25rem;line-height:1.5;max-width:34ch;margin-top:28px;color:#333}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:36px}
+.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:52px;border-top:1px solid var(--ink)}
+.hero-proof div{padding:16px 16px 0 0;display:grid;gap:2px;align-content:start}
+.hero-proof div+div{padding-left:16px;border-left:1px solid var(--line)}
+.hero-proof b{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.hero-proof span{font-size:.85rem;color:var(--muted);line-height:1.35}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;height:640px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 91%,transparent)}
+.col{overflow:hidden;min-width:0}
+.col-track{display:flex;flex-direction:column;gap:14px;animation:up 46s linear infinite}
+.col:nth-child(even) .col-track{animation-name:down;animation-duration:52s}
+.col img{width:100%;border-radius:10px;box-shadow:0 1px 0 var(--line),0 12px 28px -18px rgba(0,0,0,.35)}
+.cols:hover .col-track{animation-play-state:paused}
+@keyframes up{to{transform:translateY(calc(-50% - 7px))}}
+@keyframes down{from{transform:translateY(calc(-50% - 7px))}to{transform:translateY(0)}}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:48px}.cols{height:520px}}
+@media (max-width:560px){.cols{grid-template-columns:repeat(2,minmax(0,1fr));height:460px}.col:nth-child(n+3){display:none}.hero-proof{grid-template-columns:1fr}.hero-proof div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* logos */
+.logos{padding-block:44px;border-block:1px solid var(--line);margin-top:72px}
+.logos p{font-size:.9rem;color:var(--muted);margin-bottom:22px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.logo-track{display:flex;align-items:center;gap:72px;width:max-content;animation:left 44s linear infinite}
+.logo-track img{height:34px;width:auto;max-width:none;opacity:.62}
+.logo-track img.tall{height:52px}
+@keyframes left{to{transform:translateX(calc(-50% - 36px))}}
+
+/* before/after */
+.ba{background:var(--band)}
+.ba-cards{display:grid;grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);align-items:center;max-width:980px}
+.ba-card{background:#fff;border:1.5px solid var(--ink);border-radius:16px;padding:26px 28px;position:relative;display:grid;gap:6px}
+.ba-card .amt{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:700;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.ba-card .sub{color:var(--muted);font-weight:500}
+.pill{justify-self:start;display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;padding:4px 10px;border-radius:8px;font-variant-numeric:tabular-nums}
+.pill.down{background:#FCE9E6;color:#B4281A}
+.pill.up{background:#E3F4EA;color:var(--good)}
+.mark{position:absolute;top:-22px;right:-14px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.5rem;font-weight:800;box-shadow:0 0 0 5px var(--band)}
+.mark.x{background:var(--pen)}.mark.ok{background:var(--good)}
+.ba-arrow{display:grid;place-items:center}
+.ba-arrow svg{width:64px;height:40px}
+.ba-collage{margin-top:48px;max-width:980px;width:100%;border-radius:14px;border:1px solid var(--line)}
+.ba-note{margin-top:16px;font-size:.88rem;color:var(--muted);max-width:980px}
+@media (max-width:760px){.ba-cards{grid-template-columns:1fr;gap:28px}.ba-arrow{transform:rotate(90deg);height:40px}}
+
+/* results */
+.results-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.rc{border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:20px;align-content:start;background:#fff;min-width:0}
+.rc-tag{font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rc h3{font-size:clamp(1.6rem,2.4vw,2.1rem);letter-spacing:-.035em;line-height:1.05}
+.rc h3 b{color:var(--pen);font-weight:800}
+.rc ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.rc li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;font-size:1rem;line-height:1.45}
+.rc li::before{content:"";width:13px;height:7px;border-left:2.5px solid var(--good);border-bottom:2.5px solid var(--good);transform:rotate(-45deg);margin-top:6px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--band);border-radius:12px;padding:14px 16px;display:grid;gap:2px}
+.tile b{font-size:1.6rem;font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.tile span{font-size:.82rem;color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+@media (max-width:900px){.results-grid{grid-template-columns:1fr}}
+
+/* email slider */
+.work{background:var(--ink);color:var(--onink);overflow:hidden}
+.work .kicker{color:#FF7A66}
+.work .lede{color:#B5B5AF}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.work-head .sec-head{margin-bottom:0}
+.work-ctrl{display:flex;gap:8px}
+.work-ctrl button{width:50px;height:50px;border-radius:50%;border:1px solid #5A5A55;background:transparent;color:#fff;cursor:pointer;font-size:1.2rem}
+.work-ctrl button:hover{background:#fff;color:var(--ink)}
+.slider{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-left:max(24px,calc((100vw - 1240px)/2 + 24px));padding-right:24px}
+.slider::-webkit-scrollbar{display:none}
+.slide{flex:none;scroll-snap-align:start;margin:0;display:grid;gap:12px;align-content:start}
+.slide img{height:500px;width:auto;max-width:none;border-radius:14px}
+.slide figcaption{font-size:.9rem;color:#B5B5AF}
+@media (max-width:560px){.slide img{height:400px}}
+
+/* problems + services */
+.fix-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+.fix{padding:28px 28px 0 0;display:grid;gap:10px;align-content:start}
+.fix+.fix{padding-left:28px;border-left:1px solid var(--line)}
+.fix h3{font-size:1.4rem;letter-spacing:-.025em;line-height:1.15}
+.fix p{color:var(--muted)}
+.svc{margin-top:80px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:56px}
+.svc h3{font-size:clamp(1.8rem,3vw,2.4rem)}
+.svc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:40px}
+.svc li{break-inside:avoid;padding-block:14px;border-bottom:1px solid var(--line);display:grid;gap:2px}
+.svc li b{font-weight:600}
+.svc li span{color:var(--muted);font-size:.95rem}
+@media (max-width:900px){.fix-grid{grid-template-columns:1fr}.fix+.fix{padding-left:0;border-left:0;border-top:1px solid var(--line)}.fix{padding-bottom:24px}.svc{grid-template-columns:1fr;gap:24px}}
+@media (max-width:560px){.svc ul{columns:1}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.step{display:grid;gap:12px;align-content:start;border-top:1px solid var(--ink);padding-top:22px}
+.step .when{font-size:.9rem;font-weight:600;color:var(--pen)}
+.step h3{font-size:1.6rem;letter-spacing:-.025em}
+.step p{color:var(--muted)}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* founder */
+.letter{background:var(--band)}
+.letter-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);gap:72px}
+.letter-body{display:grid;gap:20px;font-size:1.2rem;line-height:1.6}
+.sig{font-family:var(--sign);font-size:1.7rem;line-height:1.4;margin-top:6px}
+@media (max-width:900px){.letter-grid{grid-template-columns:1fr;gap:28px}}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:start}
+.price-big{font-size:clamp(3.4rem,8vw,6.6rem);font-weight:850;letter-spacing:-.05em;line-height:.9;margin-top:16px}
+.price-big small{font-size:.3em;font-weight:500;letter-spacing:-.01em;color:var(--muted)}
+.price-copy{display:grid;gap:18px;font-size:1.12rem}
+.price-copy ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--ink)}
+.price-copy li{display:flex;justify-content:space-between;gap:16px;padding-block:14px;border-bottom:1px solid var(--line);font-size:1.02rem}
+.price-copy li span:last-child{color:var(--muted);text-align:right}
+@media (max-width:900px){.price-grid{grid-template-columns:1fr;gap:32px}}
+
+/* faq */
+.faq{padding-top:0}
+.faq-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:72px}
+details{border-top:1px solid var(--ink)}
+details:last-child{border-bottom:1px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding-block:22px;font-size:1.18rem;font-weight:600;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:400;font-size:1.6rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding-bottom:24px;color:var(--muted);max-width:60ch}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:28px}}
+
+/* close */
+.close{background:var(--ink);color:var(--onink)}
+.close h2{font-size:clamp(2.6rem,6vw,5.2rem);max-width:15ch}
+.close .lede{color:#B5B5AF;margin-top:22px}
+.close-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:72px;align-items:end}
+.close .lede{margin-bottom:36px}
+.free-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.free-tags span{border:1px solid #5A5A55;border-radius:999px;padding:5px 14px;font-size:.9rem;font-weight:600}
+.free-tags span:first-child{background:var(--pen);border-color:var(--pen);color:#fff}
+.close .btn{background:var(--pen);font-size:1.1rem;padding:20px 30px}
+.close .btn:hover{background:#fff;color:var(--ink)}
+.close .alt{margin-top:22px;color:#A9A9A4;font-size:.98rem}
+.get-title{font-weight:600;margin-bottom:8px}
+.get{list-style:none;margin:0;padding:0;counter-reset:g}
+.get li{counter-increment:g;display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;padding-block:18px;border-top:1px solid #3A3A36}
+.get li::before{content:counter(g);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--onink);color:var(--ink);font-weight:700;font-size:.9rem;display:grid;place-items:center}
+.get b{font-weight:600}
+.get span{color:#B5B5AF;font-size:.95rem}
+@media (max-width:900px){.close-grid{grid-template-columns:1fr;gap:48px}}
+
+footer{padding-block:40px;font-size:.9rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer .legal-line{max-width:62ch;line-height:1.5}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.cal-embed{margin-top:64px;background:#fff;border-radius:16px;overflow:hidden}
+.cal-embed .calendly-inline-widget{min-width:320px;height:720px}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="RepeatLeap home">
+      <svg viewBox="0 0 40 32" aria-hidden="true"><path d="M3 27 Q9 11 15 23 Q23 0 34 8" fill="none" stroke="#141414" stroke-width="4.4" stroke-linecap="round"/><circle cx="34.5" cy="8" r="4.2" fill="#E0301E"/></svg>RepeatLeap
+    </a>
+    <nav class="nav-links" aria-label="Main"><a href="#results">Results</a><a href="#work">Our emails</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+    <a class="btn" href="#audit">Book a free audit</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Turn first-time buyers into <em>repeat customers.</em></h1>
+      <p class="hero-sub">Klaviyo email and SMS for Shopify brands. We build the flows, write the campaigns, and report on revenue.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#audit">Get your free retention audit</a>
+        <a class="link" href="#results">See client results</a>
+      </div>
+      <div class="hero-proof">
+        <div><b>+575%</b><span>email revenue for an accessories brand</span></div>
+        <div><b>36.72%</b><span>of a brand's revenue from email in one month</span></div>
+        <div><b>78 to 81%</b><span>of email revenue from automated flows</span></div>
+      </div>
+    </div>
+    <div class="cols" aria-label="Emails written and designed by our team">
+      <div class="col"><div class="col-track"><img src="img/email-col-1.jpg" alt="Wellness bundle launch email"><img src="img/email-card-3.jpg" alt="Hair care holiday email"><img src="img/email-col-1.jpg" alt=""><img src="img/email-card-3.jpg" alt=""></div></div>
+      <div class="col"><div class="col-track"><img src="img/email-col-2.jpg" alt="Lexiacare sale email"><img src="img/email-card-2.jpg" alt="Truck accessories product drop email"><img src="img/email-col-2.jpg" alt=""><img src="img/email-card-2.jpg" alt=""></div></div>
+      <div class="col"><div class="col-track"><img src="img/email-col-3.jpg" alt="Hairoff product email"><img src="img/email-card-4.jpg" alt="Spring fashion collection email"><img src="img/email-col-3.jpg" alt=""><img src="img/email-card-4.jpg" alt=""></div></div>
+      <div class="col"><div class="col-track"><img src="img/email-col-4.jpg" alt="Good Baklava welcome email"><img src="img/email-card-5.jpg" alt="Lace Layer collection email"><img src="img/email-col-4.jpg" alt=""><img src="img/email-card-5.jpg" alt=""></div></div>
+    </div>
+  </div>
+
+  <div class="logos">
+    <div class="wrap"><p>Shopify brands our team has written for</p></div>
+    <div class="marquee"><div class="logo-track" id="logoTrack">
+      <img src="img/logo-a1.png" alt="Poedagar"><img src="img/logo-b1.png" alt="Mirror Warehouse"><img src="img/logo-a2.png" alt="Good Baklava" class="tall"><img src="img/logo-b2.png" alt="Chelsea Reece" class="tall"><img src="img/logo-a3.png" alt="Parijan"><img src="img/logo-b3.png" alt="Charlie Suede"><img src="img/logo-a4.png" alt="Vlyme"><img src="img/logo-b4.png" alt="Casual Lads"><img src="img/logo-a5.png" alt="Iconic Gymwear" class="tall"><img src="img/logo-b5.png" alt="Lace Layer" class="tall">
+    </div></div>
+  </div>
+</section>
+
+<section class="ba" aria-labelledby="baTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Before and after</span>
+      <h2 id="baTitle">From 12% of revenue to 21%.</h2>
+      <p class="lede">Klaviyo attributed revenue for one Shopify brand, before and after our team rebuilt its flows and campaign calendar.</p>
+    </div>
+    <div class="ba-cards">
+      <div class="ba-card"><span class="mark x" aria-label="Before">✕</span>
+        <span class="amt">€5,596.88</span><span class="sub">Attributed revenue (12.39% of total)</span><span class="pill down">↘ 87% vs. previous period</span></div>
+      <div class="ba-arrow" aria-hidden="true"><svg viewBox="0 0 64 40"><path d="M4 30 C 20 4, 42 4, 56 18 M46 8 L58 19 L45 26" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="ba-card"><span class="mark ok" aria-label="After">✓</span>
+        <span class="amt">$32,710.61</span><span class="sub">Attributed revenue (21.28% of total)</span><span class="pill up">↗ 33% vs. previous period</span></div>
+    </div>
+    <img class="ba-collage" src="img/collage.jpg" alt="Collage of campaign emails for Parijan, Hairoff, Lexiacare, Good Baklava and other brands">
+    <p class="ba-note">Figures as shown in the client's Klaviyo dashboard, in the currency each period reported.</p>
+  </div>
+</section>
+
+<section id="results" aria-labelledby="resTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Client results</span>
+      <h2 id="resTitle">Straight from Klaviyo.</h2>
+      <p class="lede">Unedited dashboard screenshots from accounts our team runs.</p>
+    </div>
+    <div class="results-grid">
+      <article class="rc">
+        <div class="rc-tag"><span>Accessories brand</span><span>Flow-focused rebuild</span></div>
+        <h3><b>$286,713</b> from email, up 575%.</h3>
+        <ul><li>Email drove 27.49% of total store revenue</li><li>Automated flows brought in $232,778, or 81% of email revenue</li><li>Total store revenue grew 599% in the same period</li></ul>
+        <div class="tiles"><div class="tile"><b>+575%</b><span>Email revenue growth</span></div><div class="tile"><b>81%</b><span>Revenue from flows</span></div></div>
+        <div class="shot"><img src="img/klaviyo-286k.jpg" alt="Klaviyo summary: $1,042,872.78 total revenue, $286,713.31 attributed revenue, 27.49% of total, up 575%" loading="lazy"></div>
+      </article>
+      <article class="rc">
+        <div class="rc-tag"><span>Beauty brand</span><span>Flows and campaigns</span></div>
+        <h3><b>$469,941</b> from email, up 141%.</h3>
+        <ul><li>Email drove 28.67% of total store revenue</li><li>Flows brought in $368,920, or 78.5% of email revenue</li><li>Campaigns added $101,021 on top</li></ul>
+        <div class="tiles"><div class="tile"><b>+141%</b><span>Email revenue growth</span></div><div class="tile"><b>28.67%</b><span>Of total revenue</span></div></div>
+        <div class="shot"><img src="img/klaviyo-469k.jpg" alt="Klaviyo summary: $1,639,330.26 total revenue, $469,941.16 attributed revenue, 28.67% of total, up 141%" loading="lazy"></div>
+      </article>
+      <article class="rc">
+        <div class="rc-tag"><span>Shopify brand</span><span>Aug 19 to Sep 18, 2026</span></div>
+        <h3>A quarter of a <b>$1.25M</b> month, from email.</h3>
+        <ul><li>$311,152 attributed to email and SMS, 24.85% of revenue</li><li>Flows brought in $242,077, or 77.8% of it</li><li>Campaigns added $69,074 and SMS $3,214</li></ul>
+        <div class="tiles"><div class="tile"><b>24.85%</b><span>Of total revenue</span></div><div class="tile"><b>$242k</b><span>From flows</span></div></div>
+        <div class="shot"><img src="img/klaviyo-311k.jpg" alt="Klaviyo business performance summary, Aug 19 to Sep 18 2026: $1,252,286.81 total revenue, $311,151.88 attributed revenue, 24.85% of total" loading="lazy"></div>
+      </article>
+      <article class="rc">
+        <div class="rc-tag"><span>Shopify brand</span><span>Jun 30 to Aug 1, 2026</span></div>
+        <h3><b>36.72%</b> of revenue from email in a slow month.</h3>
+        <ul><li>Store revenue fell 42% that month. Email still drove $223,725</li><li>Flows brought in $148,220, or 66% of email revenue</li><li>SMS added $13,490</li></ul>
+        <div class="tiles"><div class="tile"><b>36.72%</b><span>Of total revenue</span></div><div class="tile"><b>$148k</b><span>From flows</span></div></div>
+        <div class="shot"><img src="img/klaviyo-223k.jpg" alt="Klaviyo business performance summary, Jun 30 to Aug 1 2026: $609,333.56 total revenue, $223,725.31 attributed revenue, 36.72% of total" loading="lazy"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work" aria-labelledby="workTitle">
+  <div class="wrap work-head">
+    <div class="sec-head">
+      <span class="kicker">Our emails</span>
+      <h2 id="workTitle">Designed to be read. Written to sell.</h2>
+      <p class="lede">Recent campaigns, built from each brand's own products, reviews and customer language.</p>
+    </div>
+    <div class="work-ctrl"><button id="sPrev" aria-label="Previous emails">←</button><button id="sNext" aria-label="Next emails">→</button></div>
+  </div>
+  <div class="slider" id="slider" tabindex="0" aria-label="Email designs">
+    <figure class="slide"><img src="img/email-card-1.jpg" alt="Charlie Suede occasion wear email" loading="lazy"><figcaption>Charlie Suede · Collection launch</figcaption></figure>
+    <figure class="slide"><img src="img/email-card-2.jpg" alt="ARB Tundra Zenith bumper email" loading="lazy"><figcaption>ARB 4x4 · Limited product drop</figcaption></figure>
+    <figure class="slide"><img src="img/email-col-4.jpg" alt="Good Baklava welcome email" loading="lazy"><figcaption>Good Baklava · Welcome email</figcaption></figure>
+    <figure class="slide"><img src="img/email-card-3.jpg" alt="Hair care holiday email" loading="lazy"><figcaption>Hair care · Holiday campaign</figcaption></figure>
+    <figure class="slide"><img src="img/email-col-3.jpg" alt="Hairoff product education email" loading="lazy"><figcaption>Hairoff · Product education</figcaption></figure>
+    <figure class="slide"><img src="img/email-card-4.jpg" alt="Spring Staples fashion email" loading="lazy"><figcaption>Fashion · Seasonal collection</figcaption></figure>
+    <figure class="slide"><img src="img/email-col-2.jpg" alt="Lexiacare self-care day email" loading="lazy"><figcaption>Lexiacare · Sale campaign</figcaption></figure>
+    <figure class="slide"><img src="img/email-card-5.jpg" alt="Lace Layer collection email" loading="lazy"><figcaption>Lace Layer · Collection launch</figcaption></figure>
+    <figure class="slide"><img src="img/email-col-1.jpg" alt="June Reset bundle email" loading="lazy"><figcaption>Wellness · Bundle launch</figcaption></figure>
+  </div>
+</section>
+
+<section aria-labelledby="fixTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Why brands hire us</span>
+      <h2 id="fixTitle">Your ads buy the first order. Email pays for the second.</h2>
+    </div>
+    <div class="fix-grid">
+      <div class="fix"><h3>Ad costs keep rising</h3><p>Every new customer costs more on Meta and Google. Repeat buyers cost nothing to reach.</p></div>
+      <div class="fix"><h3>Flows built once and forgotten</h3><p>A two-year-old welcome email and a single cart reminder leave most of the list untouched.</p></div>
+      <div class="fix"><h3>Customers buy once and disappear</h3><p>Without post-purchase, replenishment and winback, the second order is left to luck.</p></div>
+    </div>
+    <div class="svc">
+      <h3>What we run for you.</h3>
+      <ul>
+        <li><b>Flow architecture</b><span>Welcome, browse, cart, post-purchase, winback, VIP</span></li>
+        <li><b>Campaign calendar</b><span>Planned, written, designed and sent every week</span></li>
+        <li><b>SMS</b><span>Cart recovery, drops and VIP early access</span></li>
+        <li><b>Segmentation</b><span>Engagement, order history and predicted next order</span></li>
+        <li><b>Copy and design</b><span>On-brand, mobile-first, built from your reviews</span></li>
+        <li><b>Deliverability</b><span>SPF, DKIM, DMARC, list cleaning and sunset rules</span></li>
+        <li><b>Testing</b><span>Subject lines, offers and layouts on every send</span></li>
+        <li><b>Reporting</b><span>Revenue, not open rates, every month</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0" aria-labelledby="howTitle">
+  <div class="wrap">
+    <div class="sec-head"><span class="kicker">How it works</span><h2 id="howTitle">Three steps. First flows live in four weeks.</h2></div>
+    <div class="steps">
+      <div class="step"><span class="when">Week 1</span><h3>Audit</h3><p>We go through your Klaviyo account flow by flow and size every revenue leak in dollars.</p></div>
+      <div class="step"><span class="when">Weeks 2 to 4</span><h3>Build</h3><p>Core flows written, designed, built and tested on desktop, mobile and dark mode.</p></div>
+      <div class="step"><span class="when">Month 2 onward</span><h3>Grow</h3><p>Weekly campaigns, constant testing, and a monthly report you can read in two minutes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="letter" aria-labelledby="letterTitle">
+  <div class="wrap letter-grid">
+    <h2 id="letterTitle">Hi, I'm Prajwol.</h2>
+    <div class="letter-body">
+      <p>I spent the last four years in B2B growth, most recently at a Y Combinator-backed software company. Before that I ran my own ecommerce store, a marketing agency and an edtech company, so I have been on the brand side of the inbox too.</p>
+      <p>RepeatLeap pairs my strategy with a senior Klaviyo team that has been running retention for Shopify brands for years. The emails and results on this page are theirs, from real client accounts.</p>
+      <p>We keep the client list small on purpose. You talk to me, and you always know what we sent, why, and what it made.</p>
+      <p><a class="link" href="#audit">Book a free call with me</a></p>
+      <p class="sig">Prajwol</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faqTitle" style="padding-top:clamp(80px,10vw,128px)">
+  <div class="wrap faq-grid">
+    <h2 id="faqTitle">Questions.</h2>
+    <div>
+      <details open><summary>Is the audit really free?</summary><p>Yes. It is a 30-minute call at no cost and with no obligation. You keep everything we find, whether you work with us or not.</p></details>
+      <details><summary>Who is this for?</summary><p>Shopify brands doing $50k a month or more that already have customers and a list, but get less than a quarter of revenue from email and SMS.</p></details>
+      <details><summary>Who does the work?</summary><p>A senior Klaviyo team with years of Shopify retention work behind it: strategists, copywriters, designers and a Klaviyo developer. I lead your account and stay your point of contact.</p></details>
+      <details><summary>Do we need Klaviyo?</summary><p>Klaviyo is where we do our best work. If you use something else, we will tell you on the audit whether switching is worth it.</p></details>
+      <details><summary>How fast do we see revenue?</summary><p>Flow revenue usually shows within the first month. Campaign revenue builds over the first quarter.</p></details>
+      <details><summary>Is there a contract?</summary><p>Month to month with 30 days notice.</p></details>
+      <details><summary>What do you need from us?</summary><p>Klaviyo and Shopify access, your brand assets, and about 30 minutes a week for approvals.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="audit" aria-labelledby="closeTitle">
+  <div class="wrap close-grid">
+    <div class="close-l">
+      <p class="free-tags"><span>Free</span><span>30 minutes</span><span>No obligation</span></p>
+      <h2 id="closeTitle">Book a free retention audit.</h2>
+      <p class="lede">On the call we open your Klaviyo account together and show you where repeat revenue is leaking. It costs nothing, and you keep the findings whether you work with us or not.</p>
+      <a class="btn" href="#book">Pick a time below</a>
+      <p class="alt">Prefer email? Write to <span style="color:var(--onink)">hello@repeatleap.com</span></p>
+    </div>
+    <div class="close-r">
+      <p class="get-title">What you get on the call</p>
+      <ol class="get">
+        <li><b>Your biggest revenue leaks</b><span>Flow by flow, sized in dollars</span></li>
+        <li><b>A benchmark of your account</b><span>How your flows and campaigns compare with healthy Shopify brands</span></li>
+        <li><b>A 90-day plan</b><span>What to fix first, which you can run with or without us</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="wrap"><div class="cal-embed" id="book"><div class="calendly-inline-widget" data-url="https://calendly.com/repeatleap/free-audit?hide_gdpr_banner=1&amp;primary_color=e0301e"></div></div></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="legal-line">© <span id="yr">2026</span> RepeatLeap. Operated by North Star Ecommerce LLC, a Wyoming limited liability company, 30 N Gould St Ste R, Sheridan, WY 82801. hello@repeatleap.com</span>
+    <nav><a href="#results">Results</a><a href="#work">Our emails</a><a href="#audit">Book a free audit</a><a href="privacy.html">Privacy</a></nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+$('#yr').textContent=new Date().getFullYear();
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const lt=$('#logoTrack'); if(!reduce) lt.innerHTML+=lt.innerHTML.replace(/alt="[^"]*"/g,'alt=""');
+
+const s=$('#slider');
+const step=()=>{const f=s.querySelector('.slide');return f?f.offsetWidth+22:300};
+function next(){ if(s.scrollLeft+s.clientWidth>=s.scrollWidth-8) s.scrollTo({left:0,behavior:'smooth'}); else s.scrollBy({left:step(),behavior:'smooth'}); }
+$('#sNext').onclick=next;
+$('#sPrev').onclick=()=>s.scrollBy({left:-step(),behavior:'smooth'});
+let t=null;const start=()=>{if(!reduce){clearInterval(t);t=setInterval(next,3200)}};const stop=()=>clearInterval(t);
+s.addEventListener('mouseenter',stop);s.addEventListener('mouseleave',start);s.addEventListener('touchstart',stop,{passive:true});s.addEventListener('focusin',stop);
+start();
+})();
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
